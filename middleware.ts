@@ -6,7 +6,7 @@ export function middleware(request: NextRequest) {
   const cspHeader = `
         default-src 'self';
     script-src 'self' 'nonce-${nonce}' https://text-csp.vercel.app 'strict-dynamic';
-    style-src 'self' 'nonce-${nonce} https://text-csp.vercel.app/';
+    style-src 'self' 'nonce-${nonce} https://text-csp.vercel.app';
     img-src 'self' blob: data:;
     font-src 'self';
     object-src 'none';
