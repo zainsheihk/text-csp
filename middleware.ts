@@ -2,8 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export function middleware(request: NextRequest) {
   const nonce = Buffer.from(crypto.randomUUID()).toString("base64");
-  const cloudfrontDomain = "https://d2oqzssnygpru4.cloudfront.net";
-  const stagingUrl = "https://text-csp.vercel.app";
+
   const cspHeader = `
         default-src 'self';
     script-src 'self' 'nonce-${nonce}' 'strict-dynamic';
