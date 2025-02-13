@@ -6,9 +6,9 @@ export function middleware(request: NextRequest) {
   const stagingUrl = "https://text-csp.vercel.app";
   const cspHeader = `
       default-src 'self';
-      script-src 'self' 'unsafe-inline' 'nonce-${nonce}' ${stagingUrl}  https://www.google.com https://www.gstatic.com;
-      script-src-elem 'self' 'unsafe-inline' ${stagingUrl} https://www.google.com https://www.gstatic.com;
-      style-src 'self' 'unsafe-inline' ${stagingUrl} https://fonts.googleapis.com ;
+      script-src 'self'  'nonce-${nonce}' ${stagingUrl}  https://www.google.com https://www.gstatic.com;
+      script-src-elem 'self'  ${stagingUrl} https://www.google.com https://www.gstatic.com;
+      style-src 'self'  ${stagingUrl} https://fonts.googleapis.com ;
       img-src 'self' blob: data: ${cloudfrontDomain} ${stagingUrl} https://www.gstatic.com https://www.youtube.com;
       font-src 'self' https://fonts.gstatic.com data:;
       object-src 'none';
